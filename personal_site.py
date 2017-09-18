@@ -4,14 +4,14 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/what-i-do')
-def projects_page():
-    return render_template("projects.html")
-
-
 @app.route('/')
 def about_page():
     return render_template("about.html")
+
+
+@app.route('/what-i-do')
+def projects_page():
+    return render_template("projects.html")
 
 
 @app.route('/contact')
