@@ -14,6 +14,11 @@ def projects_page():
     return render_template("projects.html")
 
 
+@app.route('/why-me')
+def skills_page():
+    return render_template("skills.html")
+
+
 @app.route('/contact')
 def contact_page():
     return render_template("contact.html")
