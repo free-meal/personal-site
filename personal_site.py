@@ -6,6 +6,11 @@ app = Flask(__name__)
 
 
 @app.route('/')
+def about_site_page():
+    return render_template("about_site.html")
+
+
+@app.route('/about-me')
 def about_page():
     return render_template("about.html")
 
