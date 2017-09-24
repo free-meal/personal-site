@@ -1,9 +1,5 @@
-FROM fedora:latest
+FROM tiangolo/uwsgi-nginx-flask:python3.6
 MAINTAINER Matthew Ealy "ealymatthewd@gmail.com"
-RUN dnf upgrade -y
-RUN dnf install -y python-pip python-devel @development-tools
 COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["personal_site.py"]
+COPY ./nginx_configs/* /etc/nginx/conf.d/
+
